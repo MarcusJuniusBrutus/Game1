@@ -31,8 +31,8 @@ public class MainGame {
 	}
 
 	/***** constants *****/
-	final static int PANW = 1100;
-	final static int PANH = 700;
+	final static int PANW = 1450;
+	final static int PANH = 800;
 	final static int TIMERSPEED = 10;
 	
 	
@@ -76,9 +76,10 @@ public class MainGame {
 			g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 			//gets background image after running try catch
 			BufferedImage img = loadImage("Background1.jpg");
-			g.drawImage(img, 0, 100, getWidth(), 600, null);
+			g.drawImage(img, 0, 150, getWidth(), 650, null);
 		}
 
+		//if image not found (via try/catch), throw error message
 		static BufferedImage loadImage(String filename) {
 			BufferedImage img = null;
 			try {
