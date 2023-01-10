@@ -75,7 +75,7 @@ public class MainGame {
 			Graphics2D g2 = (Graphics2D) g;
 			g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 			//gets background image after running try catch
-			BufferedImage bkg = loadImage("Background1.jpg");
+			BufferedImage bkg = loadImage("BackGround1.jpg");
 			g.drawImage(bkg, 0, 150, getWidth(), 650, null);
 		}
 
