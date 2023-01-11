@@ -1,9 +1,5 @@
 package game;
 
-/* Add comments here
- * 
- */
-
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -35,6 +31,13 @@ public class MainGame {
 	final static int PANH = 800;
 	final static int TIMERSPEED = 10;
 	
+	final static BufferedImage bkg1 = loadImage("Photos/BackGround1.jpg");
+	final static BufferedImage peashooter = loadImage("Photos/peashooter.png");
+	final static BufferedImage potatomine = loadImage("Photos/potato-mine.png");
+	final static BufferedImage repeater = loadImage("Photos/repeater.png");
+	final static BufferedImage snowpea = loadImage("Photos/snow-pea.png");
+	final static BufferedImage sunflower = loadImage("Photos/sunflower.png");
+	final static BufferedImage wallnut = loadImage("Photos/wall-nut.png");
 	
 	/***** instance variables (global) *****/
 	DrawingPanel panel = new DrawingPanel();
@@ -75,21 +78,20 @@ public class MainGame {
 			Graphics2D g2 = (Graphics2D) g;
 			g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 			//gets background image after running try catch
-			BufferedImage bkg = loadImage("Photos/BackGround1.jpg");
-			g.drawImage(bkg, 0, 150, getWidth(), 650, null);
+			g.drawImage(bkg1, 0, 150, getWidth(), 650, null);
 		}
+	}
 
-		//if image not found (via try/catch), throw error message
-		static BufferedImage loadImage(String filename) {
-			BufferedImage img = null;
-			try {
-				img = ImageIO.read(new File(filename));
-			} catch (IOException e) {
-				System.out.println(e.toString());
-				JOptionPane.showMessageDialog(null, "An image failed to load:" + filename, "ERROR", JOptionPane.ERROR_MESSAGE);
-			}
-			return img;
+	//if image not found (via try/catch), throw error message
+	static BufferedImage loadImage(String filename) {
+		BufferedImage img = null;
+		try {
+			img = ImageIO.read(new File(filename));
+		} catch (IOException e) {
+			System.out.println(e.toString());
+			JOptionPane.showMessageDialog(null, "An image failed to load:" + filename, "ERROR", JOptionPane.ERROR_MESSAGE);
 		}
-	}	
+		return img;
+	}
 }
 
